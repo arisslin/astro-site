@@ -1,0 +1,19 @@
+---
+import type { Frontmatter } from '../types';
+
+const posts = await Astro.glob<Frontmatter>('../pages/legalpages/*.md');
+---
+
+<header>
+  <nav>
+    <ul>
+      <li><a href='/'>Home</a></li>{
+        posts.map((post) => (
+          <li>
+            <a href={post.url}>{post.frontmatter.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>

@@ -1,4 +1,11 @@
 ---
+import type { Image } from 'astro:assets';
+import Header from '../components/header.astro';
+
+export interface Props {
+  pageTitle: string;
+}
+
 const { pageTitle } = Astro.props;
 ---
 
@@ -11,6 +18,7 @@ const { pageTitle } = Astro.props;
     <title>{pageTitle}</title>
   </head>
   <body>
+    <Header />
     <h1>{pageTitle}</h1>
     <slot />
   </body>
