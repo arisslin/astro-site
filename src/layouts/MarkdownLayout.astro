@@ -1,5 +1,10 @@
 ---
-import BaseLayout from './baselayout.astro';
+import type { Frontmatter } from '../types';
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  frontmatter: Frontmatter;
+}
 
 const { frontmatter } = Astro.props;
 ---
